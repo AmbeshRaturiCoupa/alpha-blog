@@ -1,11 +1,9 @@
-    <% if @article.errors.any? %>
-
-
+<% if obj.errors.any? %>
     <div class="alert alert-danger alert-warning alert-dismissible fade show" role="alert">
         <h4 class="alert-heading">The following erorrs prevent them from being saved :</h4>
         <div class="error-messages">
             <ul>
-                <% @article.errors.full_messages.each do |message| %>
+                <% obj.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
                 <% end %>
             </ul>
@@ -14,4 +12,4 @@
             </button>
         </div>
     </div>
-    <% end %>
+<% end %>
