@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user = User.fing(
+        @user = User.find(
         params[:id]
         )
         if @user.update(user_params)
@@ -29,6 +29,13 @@ class UsersController < ApplicationController
             redirect_to articles_path
         end
 
+    end
+
+    def show
+        @user=User.find(
+        params[:id]
+        )
+        @articles=@user.articles
     end
 
     private
