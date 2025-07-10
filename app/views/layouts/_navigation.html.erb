@@ -35,11 +35,12 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                    Profile [<%= current_user.username %>]
+                    <%= "Admin" if current_user.admin? %> Profile [<%= current_user.username %>]
                 </a>
                 <div class="dropdown-menu">
                     <%= link_to "View your profile", user_path(current_user), class: "dropdown-item" %> 
                     <%= link_to "Edit you profile", edit_user_path(current_user), class: "dropdown-item" %>
+                    <%= link_to "Delete you profile", user_path(current_user), method: :delete, class: "dropdown-item text-danger", data: { confirm: "Are you sure" } %>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
