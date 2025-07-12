@@ -5,8 +5,10 @@
             <div class="card text-center shadow mb-5 bg-white rounded">
                 <div class="card-header font-italic">
                     <% if article.user %>
-                     by <%= link_to article.user.username, user_path(article.user)%>
-
+                    by <%= link_to article.user.username, user_path(article.user)%><br>
+                    <% article.categories.each do |category| %>
+                    <%= link_to category.name, category, class: "badge badge-pill badge-info mr-1"%>
+                    <% end %>
                     <%end%>
                 </div>
                 <div class="card-body">
