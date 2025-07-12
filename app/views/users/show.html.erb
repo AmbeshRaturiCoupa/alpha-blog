@@ -1,5 +1,5 @@
 <h1 class="text-center mt-4"><%= @user.username %>'s profile</h1>
-<h3 class="text-center mt-4"><%= @user.username %>'s articles</h3>
+<h3 class="text-center mt-4">Articles</h3>
 <div class="flickr_pagination">
     <%= will_paginate @articles, :container => false %>
 </div>
@@ -8,4 +8,4 @@
 
 <div class="flickr_pagination mb-4">
     <%= will_paginate @articles, :container => false %>
-</div>  
+</div>
